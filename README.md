@@ -15,7 +15,7 @@ Feel free to explore my projects or reach out if you would like to collaborate.
 
 ## 🌟 Recently Worked On / Currently Working On
 
-### 1. AI Agent Auditor — Real-Time LLM Observability Platform *(In Progress)*
+### 1. AI Agent Auditor — Real-Time LLM Observability Platform
 
 A real-time monitoring and auditing platform that intercepts, logs, analyzes, and scores the behavior of any LLM-powered agent pipeline — flagging unsafe decisions, cost inefficiencies, hallucinations, and compliance violations. Fully open-source stack, no paid APIs required beyond the LLM being audited.
 
