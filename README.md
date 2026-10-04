@@ -1,6 +1,8 @@
 # Hi there 👋
 
-I'm **Ramchandra Chawla**, a software developer focused on building reliable AI-integrated systems — from LLM observability infrastructure to real-time verification pipelines and ML-based prediction engines. I enjoy turning complex engineering problems into clean, well-structured solutions.
+I'm **Ramchandra Chawla**, a Computer Science graduate from UNC Charlotte now in the Early Entry M.S. in Data Science and Business Analytics. I build reliable AI-integrated systems — from LLM observability and multi-agent clinical risk to crime-aware navigation and ML prediction — and I care most about the problem solving between the tools.
+
+I'm currently an **Enterprise Analytics and Data Science Intern at UNC Health Rex**. Before that I was a Data Analyst at UBS and a Graduate Teaching Assistant for Machine Learning, working with over 50 students.
 
 This repository is a collection of my projects, research work, and applied systems across:
 
@@ -10,6 +12,38 @@ This repository is a collection of my projects, research work, and applied syste
 - Language Processing & Compliance Logic 📊
 
 Feel free to explore my projects or reach out if you would like to collaborate.
+
+---
+
+## 💼 Experience
+
+**Enterprise Analytics and Data Science Intern** — [UNC Health Rex](https://www.linkedin.com/company/unchealthrex) · Morrisville, NC  
+Jun 2026 – Present
+
+**Graduate Teaching Assistant, Machine Learning** — [UNC Charlotte](https://www.linkedin.com/school/unc-charlotte) · Charlotte, NC  
+Sep 2025 – May 2026  
+Scored labs, wrote feedback, flagged concerns to the instructor, and kept the weekly assignment gradebook accurate.
+
+**Data Analyst** — [UBS](https://www.linkedin.com/company/ubs) · Raleigh–Durham  
+Jun 2025 – Aug 2025  
+Streamlined workflows for infrastructure provisioning and decommissioning, improved reporting accuracy, and kept data integrity and compliance intact through system transitions. Resolved user issues end to end.
+
+**Student Ambassador** — [Wake Technical Community College](https://www.linkedin.com/school/waketechcc)  
+Aug 2023 – May 2024  
+Planned orientations, campus tours, and outreach, and connected new students with academic and support services.
+
+---
+
+## 🎓 Education
+
+**M.S. Data Science and Business Analytics** — UNC Charlotte · Early Entry 4+1 · 2025 – 2027  
+Data analysis, machine learning, business intelligence, and data privacy, applied to real datasets and business problems.
+
+**B.S. Computer Science** — UNC Charlotte · AI, Robotics, and Gaming · 2024 – 2026  
+Chancellor’s List, Fall 2024. Dean’s List, Spring 2025 and Fall 2025. Secretary, School of Data Science Student Council.
+
+**Associate degrees, Engineering and Science** — Wake Technical Community College · 2022 – 2024  
+Dean’s List, Fall 2023.
 
 ---
 
@@ -62,12 +96,12 @@ A professional message rewriting engine with deterministic risk scoring and stru
 
 ### 4. Soccer Match Prediction — ML-Based Outcome Modeling
 
-A machine learning project to predict soccer match outcomes using data-driven feature engineering and model experimentation.
+A machine learning project to predict soccer match outcomes from historical results. Prepared 9,000+ match records and engineered 200+ features covering recent form, scoring patterns, and situational performance.
 
 **Key Features and Technologies:**
-- **Feature Engineering:** Designed match-level features including form metrics, head-to-head statistics, and home/away differentials.
-- **Model Experimentation:** Evaluated multiple classification approaches to identify the best-performing model configuration.
-- **Prediction Accuracy:** Iterated on feature selection and model parameters to improve accuracy on held-out match data.
+- **Feature Engineering:** Designed match-level features including form metrics, head-to-head statistics, and home/away differentials, then cleaned, encoded, and normalized the set.
+- **Model Experimentation:** Trained logistic regression and neural network classifiers for win, loss, and draw, and compared them with precision, recall, and F1.
+- **Class Imbalance:** Identified imbalance in the outcome labels and tested resampling and regularization so the minority classes were not ignored.
 
 **Tech Stack:** Python, Scikit-learn, Pandas, Jupyter
 
@@ -206,12 +240,12 @@ Built under hackathon time constraints with a focus on end-to-end completeness �
 
 | Area | Tools |
 |---|---|
-| **Languages** | TypeScript · Python · Java · HTML |
-| **AI / ML** | LLM Pipelines · Multi-Agent Systems · RAG · Scikit-learn · Multimodal AI |
-| **Backend** | FastAPI · REST APIs · System Design |
-| **Data** | PostgreSQL · PostGIS · DuckDB · SQLite · Pandas |
+| **Languages** | Python · TypeScript · Java · C/C++ · SQL · HTML |
+| **AI / ML** | PyTorch · Scikit-learn · LLM Pipelines · Multi-Agent Systems · RAG · Multimodal AI |
+| **Backend** | FastAPI · Django · REST APIs · System Design |
+| **Data** | PostgreSQL · MySQL · PostGIS · DuckDB · SQLite · Pandas · Power BI |
 | **Frontend** | React · Next.js · MapLibre · Tailwind CSS |
-| **Tooling** | Git · GitHub · VS Code |
+| **Cloud & tools** | Azure · Git · GitHub · VS Code |
 
 ---
 
@@ -222,6 +256,51 @@ Opportunities in **AI engineering**, **backend development**, and **ML systems**
 ---
 
 ## 📁 Other Work
+
+### Evaluating PETAL Against a Differentially Private Pre-trained LLM
+> First empirical evaluation of PETAL, a label-only membership inference attack, against VaultGemma. Mar 2026 – May 2026.
+
+Built a 192-sample Wikipedia evaluation set with membership labels anchored to Gemma’s March 2024 training cutoff, reimplemented the PETAL pipeline with `all-MiniLM-L6-v2` semantic similarity, and compared a matched Gemma 3 1B and VaultGemma 1B pair. Scale and length checks across four GPT-2 sizes, plus 10,000-iteration bootstrap resampling, showed the AUC gap was not statistically significant.
+
+**Tech Stack:** Python · Differential Privacy · Sentence Transformers
+
+---
+
+### Lightweight Transformer for Skeleton-Based Action Recognition
+> End-to-end PyTorch pipeline on NTU RGB+D 60. Aug 2025 – Dec 2025.
+
+Reproduced a unified spatial-temporal attention baseline, added joint normalization and temporal windowing for the cross-subject and cross-view protocols, and ran ablations on MLP hidden size to trade accuracy against parameter count and FLOPs.
+
+**Tech Stack:** Python · PyTorch
+
+---
+
+### AI Financial Planner
+> Automated transaction classification and 30-day cash flow forecasting. Aug 2025 – Sep 2025.
+
+Trained a Random Forest on transaction text, amount, and timing, engineered time-series features for the forecast, and used Isolation Forest to flag unusual spending and subscription creep.
+
+**Tech Stack:** Python · scikit-learn · Pandas
+
+---
+
+### Gemini Image Classifier
+> Prompt-based image classification without training a custom model. Oct 2025 – Nov 2025.
+
+CLI and web inference with configurable label sets and top-K predictions, plus logged metadata and a dashboard with confusion matrices.
+
+**Tech Stack:** Python · Google Gemini · Flask
+
+---
+
+### Cricket Analytics Database
+> Normalized MySQL model for team and player comparisons. Nov 2025 – Dec 2025.
+
+Five related tables with primary and foreign keys, CSV ingestion checks, and analytical views using joins, CTEs, window functions, and `CASE` expressions.
+
+**Tech Stack:** MySQL · SQL
+
+---
 
 ### [Forage JPMC — Advanced Software Engineering](https://github.com/Ramlols2604/forage-midas)
 > Industry-style tasks from the JPMorgan Chase Advanced SWE Forage program.
@@ -235,9 +314,17 @@ Practiced real-world software engineering fundamentals in a structured, industry
 ### [Recipe App](https://github.com/Ramlols2604/recipe)
 > A full-stack Django web application for browsing, creating, and managing recipes with user profiles and authentication.
 
-Built using the Django MVT pattern with SQLite, covering user profile management, recipe detail pages, and CRUD operations — a practical exercise in full-stack web development with Python.
+Built using the Django MVT pattern with SQLite. Covers authentication, profiles, tagging, follower relationships, and CRUD for recipes, comments, and blogs.
 
 **Tech Stack:** Python · Django · SQLite · HTML · CSS · JavaScript
+
+---
+
+## 📜 Certifications
+
+- **IBM** — Agentic AI with LangChain and LangGraph, Fundamentals of Building AI Agents, Develop Generative AI Applications, Build Multimodal Generative AI Applications, Build RAG Applications, Vector Databases for RAG (2025)
+- **Python Institute** — PCEP, Certified Entry-Level Python Programmer
+- **Microsoft** — MTA: Introduction to Programming Using Python
 
 ---
 
