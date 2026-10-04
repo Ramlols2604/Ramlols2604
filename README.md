@@ -15,7 +15,24 @@ Feel free to explore my projects or reach out if you would like to collaborate.
 
 ## 🌟 Recently Worked On / Currently Working On
 
-### 1. AI Agent Auditor — Real-Time LLM Observability Platform
+### 1. [Prodrome](https://github.com/Ramlols2604/prodrome) — Multi-Agent Early Deterioration Detection
+
+A research system that reads an ICU patient's hourly vitals and labs and asks a committee of specialist agents to assess the trajectory independently. A Judge agent then returns a verdict plus a dissent score — how much the specialists disagreed — instead of collapsing everything into one black-box risk number. High dissent is the signal that a person should look, not a case to average away.
+
+Built on the open PhysioNet/CinC Challenge 2019 sepsis dataset, so results can be checked against labeled outcomes. This is a retrospective portfolio project, not a validated clinical tool.
+
+**Key Features and Technologies:**
+- **Specialist Committee:** Four agents — Vitals, Lab, Demographic/Risk, and Historical Pattern — each read the same patient window and argue from their own evidence.
+- **Deterministic Classification:** Thresholds and verdicts (`STABLE`, `WATCH`, `DETERIORATING`, `CRITICAL`) are computed in Python. The LLM only narrates why the rule-based result matches the flagged data.
+- **Dissent Score:** The Judge measures disagreement across the committee. On a 300-patient evaluation set, higher dissent tracked a higher septic rate even when mean severity barely changed.
+- **Persistence Filtering:** A 2-of-3-hour filter was measured against the baseline WATCH+ rule, trading some sensitivity for fewer transient false positives, with the lead-time cost characterized case by case.
+- **Parallel Orchestration:** Specialists run together with `asyncio.gather` after sequential n8n prototypes showed Groq tool-calling failures under concurrent load.
+
+**Tech Stack:** Python · FastAPI · Groq · PhysioNet 2019 · asyncio
+
+---
+
+### 2. AI Agent Auditor — Real-Time LLM Observability Platform
 
 A real-time monitoring and auditing platform that intercepts, logs, analyzes, and scores the behavior of any LLM-powered agent pipeline — flagging unsafe decisions, cost inefficiencies, hallucinations, and compliance violations. Fully open-source stack, no paid APIs required beyond the LLM being audited.
 
@@ -30,7 +47,7 @@ A real-time monitoring and auditing platform that intercepts, logs, analyzes, an
 
 ---
 
-### 2. Message Rewriter v3 — Compliance-Grade Language Processing Engine
+### 3. Message Rewriter v3 — Compliance-Grade Language Processing Engine
 
 A professional message rewriting engine with deterministic risk scoring and structured compliance checks — built for reliability and auditability, not just fluency.
 
@@ -43,7 +60,7 @@ A professional message rewriting engine with deterministic risk scoring and stru
 
 ---
 
-### 3. Soccer Match Prediction — ML-Based Outcome Modeling
+### 4. Soccer Match Prediction — ML-Based Outcome Modeling
 
 A machine learning project to predict soccer match outcomes using data-driven feature engineering and model experimentation.
 
@@ -56,7 +73,7 @@ A machine learning project to predict soccer match outcomes using data-driven fe
 
 ---
 
-### 4. PitchIQ — AI-Native Cricket Decision Intelligence Platform
+### 5. PitchIQ — AI-Native Cricket Decision Intelligence Platform
 
 An AI-powered decision platform for IPL/T20 franchises that generates explainable predicted playing XIs, collapse-risk alerts, and opposition intelligence from open ball-by-ball datasets.
 
@@ -74,6 +91,23 @@ An AI-powered decision platform for IPL/T20 franchises that generates explainabl
 ## ⚡ Hackathon Projects
 
 Fast-built, high-pressure projects from competitive hackathons — focused on shipping real systems under time constraints.
+
+---
+
+### 🏆 [WayAware](https://github.com/Ramlols2604/WayAware) — Crime-Aware NYC Navigation *(Columbia · September 2026)*
+
+> Walking and driving directions for New York City that show historical crime patterns along the route and compare alternatives by travel time and modeled exposure.
+
+Map apps optimize for time. WayAware keeps that, then colors the chosen path from NYPD complaint history so a faster street and a lower-exposure street can be compared before you start.
+
+**What we built in the time limit:**
+- **Route Exposure Scoring:** Splits a route into ~100 m pieces and scores each one from seven major NYPD felony categories, weighted so one murder counts the same as 25 grand larcenies. Bands are lower, moderate, and higher exposure.
+- **Spatial Queries:** PostGIS `ST_DWithin` finds complaints inside a corridor around each piece. Segment colors are not added together as a unique route total, because neighboring corridors overlap.
+- **Alternative Comparison:** Mapbox routing returns candidate paths; the UI compares them by travel time and the exposure summary, with a safest-versus-fastest preference.
+- **Place Search and Map:** Server-side Mapbox Search Box for NYC destinations, rendered on a MapLibre map with OpenFreeMap tiles so the browser never holds a Mapbox token.
+- **Voice Alerts:** A settings toggle for spoken alerts while navigating.
+
+**Tech Stack:** TypeScript · React · Vite · FastAPI · PostgreSQL · PostGIS · MapLibre · Mapbox
 
 ---
 
@@ -173,9 +207,10 @@ Built under hackathon time constraints with a focus on end-to-end completeness �
 | Area | Tools |
 |---|---|
 | **Languages** | TypeScript · Python · Java · HTML |
-| **AI / ML** | LLM Pipelines · RAG · Scikit-learn · Multimodal AI |
+| **AI / ML** | LLM Pipelines · Multi-Agent Systems · RAG · Scikit-learn · Multimodal AI |
 | **Backend** | FastAPI · REST APIs · System Design |
-| **Data** | DuckDB · SQLite · Pandas |
+| **Data** | PostgreSQL · PostGIS · DuckDB · SQLite · Pandas |
+| **Frontend** | React · Next.js · MapLibre · Tailwind CSS |
 | **Tooling** | Git · GitHub · VS Code |
 
 ---
